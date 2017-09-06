@@ -1,6 +1,7 @@
 
 ###### Installation
 ```
+git clone git@github.com:Raat/boilerplate.git
 npm i
 npm run storybook
 ```
