@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress",
     "storybook": "start-storybook -s ./public -p 9001",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
+    "react-docgen": "^2.18.0",
     "react-dom": "^15.6.1",
     "react-intl": "^2.3.0",
     "react-intl-redux": "^0.6.0",
@@ -59,7 +62,7 @@
     "eslint-plugin-chai-expect": "^1.1.1",
     "eslint-plugin-chai-friendly": "^0.4.0",
     "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.3.0",
     "expect": "^1.20.2",
     "jsdom": "11.2.0",
@@ -71,6 +74,7 @@
     "react-test-renderer": "^15.6.1",
     "sinon": "^3.2.1",
     "storybook-addon-specifications": "^2.1.1",
+    "styleguidist-goodies": "^2.0.0",
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1"
   }
