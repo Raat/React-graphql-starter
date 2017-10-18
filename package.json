@@ -6,14 +6,10 @@
   "scripts": {
     "lint": "eslint src --ext .jsx,.js",
     "clean": "rm -rf ./public/build",
-    "build:watch": "npm run clean && NODE_ENV=development webpack -d --watch",
-    "build:dev": "npm run clean && NODE_ENV=development webpack -d",
-    "build:prod": "npm run clean && NODE_ENV=production webpack -p",
-    "server:dev": "NODE_ENV=development node server/index.js",
-    "server:prod": "NODE_ENV=production node server/index.js",
     "mocha": "NODE_ENV=test mocha --compilers js:babel-register --require babel-polyfill ./.storybook/mocha/config.js \"./app/**/*.stories.js\" --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
+    "start:prod":"npm run build node server/index.js",
     "build": "webpack",
     "storybook": "start-storybook -s ./public -p 9001",
     "build-storybook": "build-storybook"
@@ -90,5 +86,12 @@
     "webpack-dev-server": "^2.7.1",
     "webpack-hot-middleware": "^2.20.0",
     "webpack-merge": "^4.1.0"
+  },
+  "babel":{
+    "presets": ["es2015", "react", "stage-2"]
+  },
+  "nodemonConfig": {
+    "ignore": ["ui/*"],
+    "delay": "2500"
   }
 }

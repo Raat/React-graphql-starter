@@ -9,51 +9,6 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const TARGET = process.env.npm_lifecycle_event;
 
-// module.exports = {
-//   context: __dirname,
-//   entry: [
-//     'react-hot-loader/patch',
-//     'webpack-dev-server/client',
-//     './src/index.js',
-//   ],
-//   output: {
-//     path: path.join(__dirname, "../public/js/")
-//     publicPath: '/',
-//     filename: 'bundle.js',
-//   },
-//   devtool: '#source-map',
-//   plugins: [
-//     new webpack.HotModuleReplacementPlugin(),
-//     new webpack.NamedModulesPlugin(),
-//     new webpack.NoEmitOnErrorsPlugin(),
-//     new ExtractTextPlugin({
-//       filename: 'style.css',
-//     }),
-//     new StyleLintPlugin(),
-//   ],
-//   module: {
-//     rules: [
-//       {
-//         test: /\.scss$/,
-//         use: ExtractTextPlugin.extract({
-//           fallback: 'style-loader',
-//           use: ['css-loader', 'sass-loader'],
-//         }),
-//       },
-//       {
-//         test: /\.js$/,
-//         use: ['babel-loader', 'eslint-loader'],
-//         exclude: /node_modules/,
-//       },
-//       {
-//         test: /\.jsx$/,
-//         use: ['babel-loader', 'eslint-loader'],
-//         exclude: /node_modules/,
-//       },
-//     ],
-//   },
-// };
-
 let Config = {
   target: 'web',
   entry: [
@@ -105,9 +60,12 @@ let Config = {
   },
 };
 
-if (TARGET === 'build:prod' && !isDev) {
-  Config = merge(Config, {
+if (TARGET === 'start:prod' && !isDev) {
+  Config = merge.strategy({ entry: 'prepend' })(Config, {
     bail: true,
+    entry: [
+      'babel-polyfill',
+    ],
     devtool: 'eval',
     output: { publicPath: '/build/' },
     plugins: [
@@ -124,7 +82,7 @@ if (TARGET === 'build:prod' && !isDev) {
   });
 }
 
-if (TARGET === 'server:dev' && isDev) {
+if (TARGET === 'start' && isDev) {
   Config = merge.strategy({ entry: 'prepend' })(Config, {
     devtool: 'inline-source-map',
     entry: [

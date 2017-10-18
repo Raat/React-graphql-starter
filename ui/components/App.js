@@ -3,7 +3,7 @@ import './sass.scss';
 
 const App = () => (
   <div>
-    <pre>Start making changes in the file src/components/App.js</pre>
+    <pre>Start file src/components/App.js</pre>
   </div>
 );
 
