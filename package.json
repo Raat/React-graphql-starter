@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src --ext .jsx,.js",
     "clean": "rm -rf ./public/build",
-    "mocha": "NODE_ENV=test mocha --compilers js:babel-core/register --require babel-polyfill ./.storybook/mocha/config.js \"./app/**/*.stories.js\" --watch",
+    "mocha": "NODE_ENV=test mocha --compilers js:babel-register --require babel-polyfill ./.storybook/mocha/config.js \"./app/**/*.stories.js\" --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
     "start:prod":"npm run build node server/index.js",
