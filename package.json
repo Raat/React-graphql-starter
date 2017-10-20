@@ -9,7 +9,7 @@
     "mocha": "NODE_ENV=test mocha --compilers js:babel-register --require babel-polyfill ./.storybook/mocha/config.js \"./app/**/*.stories.js\" --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
-    "start:prod":"npm run build node server/index.js",
+    "start:prod": "npm run build node server/index.js",
     "build": "webpack",
     "storybook": "start-storybook -s ./public -p 9001",
     "build-storybook": "build-storybook"
@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/Raat/shopping-cart#readme",
   "dependencies": {
+    "apollo-client": "^1.9.3",
+    "apollo-test-utils": "^0.3.2",
     "babel-core": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "connect-history-api-fallback": "^1.4.0",
@@ -32,11 +34,16 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "getenv": "^0.7.0",
+    "graphql-tools": "^2.5.1",
     "isdev": "^1.0.1",
     "nodemon": "^1.12.1",
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
+    "react": "^15.6.2",
+    "react-apollo": "^1.4.16",
     "react-dom": "^15.6.1",
+    "react-helmet": "^5.2.0",
+    "react-highlight": "^0.10.0",
+    "react-router-dom": "^4.2.2",
     "whatwg-fetch": "^2.0.3",
     "winston": "^2.4.0"
   },
@@ -86,11 +93,17 @@
     "webpack-hot-middleware": "^2.20.0",
     "webpack-merge": "^4.1.0"
   },
-  "babel":{
-    "presets": ["es2015", "react", "stage-2"]
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-2"
+    ]
   },
   "nodemonConfig": {
-    "ignore": ["ui/*"],
+    "ignore": [
+      "ui/*"
+    ],
     "delay": "2500"
   }
 }
