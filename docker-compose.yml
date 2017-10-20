@@ -1,0 +1,10 @@
+version: "2"
+services:
+  client:
+    build: .
+    volumes: 
+      - ./client:/src/app/client
+      - /src/app/client/node_modules
+    ports:
+      - "9000:9000"
+    env_file: .env
