@@ -2,10 +2,11 @@ export default `
   type Page {
     id: ID!
     slug: String
-    consten: String
+    content: String
+    title: String
   }
   type RootQuery {
-    getPage(slug: String): Page
+    page(slug: String): Page
   }
   schema {
     query: RootQuery

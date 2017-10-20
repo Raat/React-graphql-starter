@@ -1,37 +1,35 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import DefaultLayout from '../../layouts/default';
 
-const Homepage = () => (
+const Homepage = ({ page }) => (
   <div>
     <DefaultLayout>
       <section>
+        <header>
+          GraphQl page title: {page.title}
+        </header>
         <article>
           <header>
             <h2>The title of Article 1</h2>
-            <p>
-              Content of Article 1.</p>
           </header>
-
-          <header>
-            <h2>The title of Article 2</h2>
+          <section>
             <p>
-              Content of Article 2.</p>
-          </header>
+              Content of Article 1.
+            </p>
+          </section>
         </article>
-
       </section>
-
       <aside>
-        <h2>
-          Section Tite.
-        </h2>
-        <p>
-          Content of the section.
-        </p>
+        graphQl page content: {page.content}
       </aside>
 
     </DefaultLayout>
   </div>
 );
+
+Homepage.propTypes = {
+  page: propTypes.any,
+};
 
 export default Homepage;

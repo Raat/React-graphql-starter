@@ -1,9 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import ApolloProvider from '../utils/apollo/provider';
-import './sass.scss';
-import Homepage from './pages/homepage/homepage';
-import Head from './seo/head';
+import ApolloProvider from './services/apollo/provider';
+import HomepageWithData from './pages/homepage/withData';
+import Head from './services/helmet/head';
 
 const App = () => (
   <ApolloProvider>
@@ -11,7 +10,7 @@ const App = () => (
       <Head />
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' component={Homepage} />
+          <Route exact path='/' component={HomepageWithData} />
         </Switch>
       </BrowserRouter>
     </div>
