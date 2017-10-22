@@ -8,7 +8,7 @@
   },
   "globals": {
     "specs": true,
-    "storiesOf": true
+    "storiesOf": true,
   },
   "rules": {
     "import/no-extraneous-dependencies": [2, {}],
@@ -18,6 +18,10 @@
   },
   "extends": ["plugin:react/recommended", "airbnb-base"],
   "settings": {
-    "import/resolver": "webpack"
+    "import/resolver": {
+      "webpack":{
+        config: 'webpack.config.babel.js'
+      }
+    }
   }
 }

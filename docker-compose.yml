@@ -1,9 +1,9 @@
 version: "2"
 services:
-  client:
+  react_starter:
     build: .
     volumes: 
-      - ./client:/src/app/client
+      - ./:/src/app/client
       - /src/app/client/node_modules
     ports:
       - "9000:9000"

@@ -10,6 +10,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const TARGET = process.env.npm_lifecycle_event;
 
 let Config = {
+  context: Dir.src,
   target: 'web',
   entry: [
     path.join(Dir.src, '/app/index.js'),
