@@ -1,20 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import ApolloProvider from './services/apollo/provider';
-import HomepageWithData from './pages/homepage/withData';
+import Homepage from './pages/homepage/withData';
 import Head from './services/helmet/head';
+import Providers from './Providers';
 
 const App = () => (
-  <ApolloProvider>
+  <Providers>
     <div>
       <Head />
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' component={HomepageWithData} />
+          <Route exact path='/' component={Homepage} />
         </Switch>
       </BrowserRouter>
     </div>
-  </ApolloProvider>
+  </Providers>
 );
 
 export default App;
