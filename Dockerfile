@@ -8,11 +8,9 @@ COPY package.json /src/app/client
 
 WORKDIR /src/app/client
 
-RUN npm cache clean --force && rm -rf ./node_modules
-
 RUN npm i -g @storybook/cli --silent --progress=false
 
-RUN npm install --silent --progress=false
+RUN npm install --silent --progress=false && npm cache clean --force
 
 COPY . /src/app/client
 

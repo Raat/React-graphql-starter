@@ -1,27 +1,36 @@
+# React starter
+this project includes:
+- [x] HMR
+- [x] React
+- [x] Redux
+- [x] Material ui
+- [x] Graphql
+- [x] Docker-compose file
+- [x] Babel for es6/es7
+- [x] Webpack
+- [x] Express
+- [x] Node
 
-###### Installation
+## Installation
 ```
 git clone git@github.com:Raat/boilerplate.git
 npm i
 npm run storybook
 ```
 
-###### start express server with webpack-dev-middleware
+### start express server with webpack-dev-middleware
 ```
 npm run start
 ```
 
-###### Dockerfile is included!!
-build docker inside the folder
+### Dockerfile is included!!
+
+Run docker compose
 ```
-docker build -t my-app .
-```
-start the container
-```
-docker run -d --name my-app -p 9000:9000 my-app
+docker-compose up
 ```
 
-###### run tests
+### run tests
 ```
 npm run mocha
 ```
