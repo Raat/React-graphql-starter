@@ -12,7 +12,7 @@ const TARGET = process.env.npm_lifecycle_event;
 let Config = {
   target: 'web',
   entry: [
-    path.join(Dir.src, '/ui/index.js'),
+    path.join(Dir.src, '/app/index.js'),
   ],
   output: {
     filename: 'main.js',
@@ -41,6 +41,13 @@ let Config = {
     rules: [
       {
         test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+        }),
+      },
+      {
+        test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: ['css-loader', 'sass-loader'],
